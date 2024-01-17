@@ -1,5 +1,11 @@
 package proyectoEntornos;
 
+/** VasAVenir.java es una ventana simple con dos botones para comprobar si vas a venir o no
+ * 
+ * @author Manuel Santos Márquez
+ * @version 17/01/2024
+ */
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -18,12 +24,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class VasAVenir extends JFrame {
-
+	
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JButton botonSi;
     private JButton btnNo;
 
+    /**
+     * main es donde corre la ventana principal
+     * 
+     * @param args		Argumentos pasados a la funcion main (String)
+     * 
+     */
+    
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -48,8 +61,13 @@ public class VasAVenir extends JFrame {
 
         setContentPane(contentPane);
 
-        botonSi = new JButton("SÍ");
+        botonSi = new JButton("SI");
         botonSi.addActionListener(new ActionListener() {
+        	/**
+        	 * actionPerformed realiza una acción al pulsar en un botón
+        	 * 
+        	 * @param e		Parametro pasado a la función 
+        	 */
         	public void actionPerformed(ActionEvent e) {
         		try {
         			DialogoVasAVenir dialog = new DialogoVasAVenir();
@@ -67,6 +85,11 @@ public class VasAVenir extends JFrame {
         btnNo.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
         btnNo.setBackground(new Color(255, 0, 0));
         btnNo.addMouseListener(new MouseAdapter() {
+        	/**
+        	 * mouseEntered función que mueve un botón a una posición aleatoria cuando se pasa por encima
+        	 * 
+        	 * @param e		Parametro pasado a la función
+        	 */
             @Override
             public void mouseEntered(MouseEvent e) {
                 // Mueve el botón "NO" a una posición aleatoria cuando el ratón pasa por encima
